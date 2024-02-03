@@ -1,0 +1,116 @@
+ <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<style>
+  .btn {
+    border: none;
+  color: #e75480;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+    background-color: pink;
+  border-radius: 8px;
+font-family: "Lucida Handwriting";
+    font-weight: bold;
+
+
+
+
+  }
+
+
+
+.btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+  .btn-yes {
+    font-size: 15px;
+    
+  }
+
+  .btn-no {
+    font-size: 15px;
+  }
+
+.btn:disabled {
+    cursor: not-allowed;
+  }
+
+  .header {
+         text-align: center;
+         background: #bc1a6b;
+         color: white;
+         font-size: 20px;
+      }
+
+</style>
+	
+
+
+
+    <title>Hey Handsome</title>
+    <link rel="stylesheet" type="text/css" href="C:\Users\arvap\Documents\WTL\website\css\index.css">
+    <script src="https://kit.fontawesome.com/083d1ca39d.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+<center>
+    <IMG SRC="C:\Users\arvap\Documents\valentines\gif1.gif" height="250"></center>
+ <div class="header">
+    <h1>Hamza, will you be my valentine?</h1> </div>
+
+<center>
+<button class="btn btn-yes" onclick="redirectToAnotherPage()">Yes</button>
+  <button class="btn btn-no" onclick="changeButtons('no')">No</button> <center>
+
+
+  <script>
+    let iteration = 1;
+const maxIterations = 7;
+const messages = [
+      "Hahaha nice try",
+      "Wait what",
+      "Are you kidding me?",
+      "What even",
+      "You are making me sad now",
+      "You are making me mad now",
+      "lol as if you have a choice"
+    ];
+
+    function changeButtons(buttonType) {
+      const btnYes = document.querySelector('.btn-yes');
+      const btnNo = document.querySelector('.btn-no');
+
+      if (iteration <= maxIterations) {
+        if (buttonType === 'yes') {
+	redirectToAnotherPage()
+        } else if (buttonType === 'no') {
+          btnNo.innerText = `${messages[iteration - 1]}`;
+          btnYes.style.fontSize = `${16 + (iteration * 12)}px`;
+        }
+        iteration++;
+      }else {
+        // Disable buttons after maxIterations
+        btnNo.disabled = true;
+      }
+    }
+	function redirectToAnotherPage() {
+      // Redirect to another page
+
+      window.location.href = "file:///C:/Users/arvap/Documents/valentines/yes.html";
+    }
+  </script>
+  
+  </body>
+  </html>
